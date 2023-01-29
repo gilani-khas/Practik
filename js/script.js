@@ -12,11 +12,10 @@ function viewMoney() {
 }
 viewMoney();
 
-function getMoney() {
-  return getMoney;
-  console.log("Вот вам 10$");
+function getMoney(a) {
+  return a;
 }
-getMoney();
+getMoney("Вот вам 10$");
 
 function cash(s) {
   console.log(`Вот вам ${s}$`);
