@@ -58,35 +58,64 @@
 // }
 // even_or_Odd(2, 9);
 
+/*Практика*/
+
+const cities = [
+  {
+    name: "Москва",
+    population: 12506468,
+  },
+  {
+    name: "Санк-Петербург",
+    population: 5351935,
+  },
+  {
+    name: "Новосибирск",
+    population: 1612833,
+  },
+  {
+    name: "Калининград",
+    population: 482443,
+  },
+  {
+    name: "Калуга",
+    population: 336726,
+  },
+];
+
 //1
-let a = ["Lorem", 123, true, "ipsum"];
+cities.unshift({
+  name: "Грозный",
+  population: 326439,
+});
+cities.push({
+  name: "Дубай",
+  population: 3526254,
+});
 
-a.unshift(254, "Gilani", 589);
-
-console.log(a);
-console.log(a.length);
-console.log(a[0]);
-console.log(a[a.length - 1]);
+console.log(cities);
 
 //2
-let em = ["Gilani", 24, "Abdullah", 562, true];
-
-em.unshift(245, 598);
-em.push(687, "Khas", 35, "Djabrail");
-em.pop();
-em.splice(8, 9);
-em.shift();
-
-console.log(em);
+cities.forEach((item) => {
+  console.log(`Город ${item.name}, насиление ${item.population}`);
+});
 
 //3
-let number = [1, 3, 5, 7, 9];
-number[0] *= 2;
-number[1] *= 2;
-number[2] *= 2;
-number[3] *= 2;
-number[4] *= 2;
+let nev = cities.filter((item) => {
+  return item.population > 1000000;
+});
+console.log(nev);
 
-number.splice(2, 1);
-number.splice(0, 2, "четные числа");
-console.log(number);
+//4
+
+let nev1 = cities.map((item) => {
+  return item.population * 1.5;
+});
+console.log(nev1);
+
+//5
+
+let nev2 = nev1.reduce((sum, item) => {
+  return sum + item;
+});
+console.log(nev2);
